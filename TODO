@@ -1,0 +1,13 @@
+
+Todo:
+  ☐ Create ThemeIdea Model - id, title, score, active, user_id, timestamps
+  ☐ Create Theme Model - id, title, active, theme_idea_id, start_date, end_date, timestamps
+  ☐ Create Project Model - id, title, description, repo, user, timestamps, theme_id
+  ☐ Create ProjectImage Model - id, project_id, description, timestamps
+  ☐ Create UserProfile Model - id, name, value, type (Create UserProfileTypeEnums) // Text, Number, Image, Link
+
+
+
+
+
+ 
