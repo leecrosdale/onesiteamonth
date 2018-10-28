@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>One site a month challenge!</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -14,36 +14,21 @@
         
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <div class="bg-blue-light text-center text-white h-screen content-center">
+                
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <h1 class="text-5xl">One site a month challenge!</h1>
+            <h2 class="text-normal">Join and build one site a month with a theme!</h2>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    One site a month challenge
-                </div>
+            <button class="bg-transparent hover:bg-blue text-white font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
+                View Projects
+              </button>              
+              <button class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">
+                Join
+              </button>
 
-                <div>
-                        <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">
-                                Button
-                              </button>
-                    <button class="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">View Projects</button>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"><button>Join</button></a>
-                    @endif                    
-                </div>
-            </div>
+
+
         </div>
     </body>
 </html>
