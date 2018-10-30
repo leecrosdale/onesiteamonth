@@ -1,0 +1,32 @@
+.bg-gradient-brand {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d1cccc), to(#2e68c7));
+  background-image: linear-gradient(#d1cccc, #2e68c7);
+}
+
+@media (min-width: 576px) {
+  .sm\:bg-gradient-brand {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d1cccc), to(#2e68c7));
+    background-image: linear-gradient(#d1cccc, #2e68c7);
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:bg-gradient-brand {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d1cccc), to(#2e68c7));
+    background-image: linear-gradient(#d1cccc, #2e68c7);
+  }
+}
+
+@media (min-width: 992px) {
+  .lg\:bg-gradient-brand {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d1cccc), to(#2e68c7));
+    background-image: linear-gradient(#d1cccc, #2e68c7);
+  }
+}
+
+@media (min-width: 1200px) {
+  .xl\:bg-gradient-brand {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d1cccc), to(#2e68c7));
+    background-image: linear-gradient(#d1cccc, #2e68c7);
+  }
+}
