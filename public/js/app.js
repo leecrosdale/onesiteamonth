@@ -48193,7 +48193,7 @@ var render = function() {
               attrs: { deadline: _vm.time_remaining }
             }),
             _vm._v(" "),
-            _c("vue-twitch-player")
+            _c("VueTwitchPlayer")
           ],
           1
         )
