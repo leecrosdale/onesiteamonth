@@ -76,9 +76,13 @@ export default {
                 throw new Error("Invalid props value, correct the 'deadline' or 'end'");
             }
             interval = setInterval(() => {
-                this.now = Math.trunc((new Date()).getTime() / 1000);
-                this.reset();
-            }, 1000);           
+                this.now = Math.trunc((new Date()).getTime() / 1000);      
+                if (!this.restarted) {
+                    this.reset();
+                }          
+            }, 1000);         
+            
+            
 
         }
     },

@@ -8,7 +8,7 @@
                 <div class="row justify-content-center text-center">                    
                     <div class="col-md-12">                   
                         Time Remaining: <CrosdaleCountdownComponentVue :deadline="time_remaining"></CrosdaleCountdownComponentVue>                
-                        
+                        <vue-twitch-player></vue-twitch-player>
                     </div>
                 </div>
             </div>
