@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('theme/current', 'Api\ThemeController@current');
+
+Route::get('project/all', 'Api\ProjectController@all');

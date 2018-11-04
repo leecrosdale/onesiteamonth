@@ -6,6 +6,13 @@ Todo:
   ✔ Create ProjectImage Model - id, project_id, description, timestamps @done(18-10-28 18:34)
   ✔ Create UserProfile Model - id, name, value, type (Create UserProfileTypeEnums) // Text, Number, Image, Link @done(18-10-28 18:35)
   ✔ Add implement MustVerifyEmail in User Model @done(18-10-28 18:39)
+  ☐ Add reference to unsplash
+  ☐ Create homepage and signup @started(18-11-04 09:40)
+  ☐ Add challenges (months)
+  ☐ Discussion board? Slack / Discord
+
+
+
 
 
 

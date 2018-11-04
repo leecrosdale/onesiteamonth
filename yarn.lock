@@ -5615,6 +5615,10 @@ vue-loader@^13.7.1:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-plugin-load-script@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-plugin-load-script/-/vue-plugin-load-script-1.1.0.tgz#51a1ad26d9e1774453cee173fdd596994d6d5840"
+
 vue-style-loader@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.1.2.tgz#6b66ad34998fc9520c2f1e4d5fa4091641c1597a"
@@ -5633,9 +5637,19 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
+vue-twitch-player@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/vue-twitch-player/-/vue-twitch-player-1.0.8.tgz#c98a4753a074e1623f076d0ac18803ea297db69f"
+  dependencies:
+    vue-plugin-load-script "^1.0.1"
+
 vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vuejs-countdown@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vuejs-countdown/-/vuejs-countdown-0.2.1.tgz#184fc578356cba88f7b5356881ea7e123e5bf259"
 
 watchpack@^1.4.0:
   version "1.6.0"
