@@ -48,12 +48,21 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
+
+        $messages = [
+            'terms.in' => 'You must agree to the terms and conditions'
+        ];
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
-    }
+            'terms' => ['required', 'in:1', 'numeric'],
+            'newsletter' => ['required', 'numeric']
+        ], $messages);
+    }   
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -67,6 +76,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'newsletter' => $data['newsletter']
         ]);
     }
 }

@@ -3,12 +3,19 @@
 @section('content')
 <div class="container background">
     <div class="row justify-content-center">
+        @guest
         <div class="col-md-6 py-1">
+        @endguest
+        @auth
+        <div class="col-md-12 py-1">    
+        @endauth
             <welcome-page-component></welcome-page-component>            
         </div>
+        @guest
         <div class="col-md-6 py-1">
             @include('auth.register')
         </div>
+        @endguest
     </div>
 
     <div class="row justify-content-center py-4">

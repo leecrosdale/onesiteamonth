@@ -63,20 +63,31 @@
                             <label for="newsletter" class="col-md-4 col-form-label text-md-right">Sign up for newsletter</label>
 
                             <div class="col-md-6">
-                                <input id="newsletter" type="checkbox" class="form-control" name="newsletter">
+                                    <select name="newsletter" class="form-control" required>
+                                            <option></option>
+                                            <option value="1">Sign me up!</option>
+                                            <option value="0">No thanks</option>
+                                    </select>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                                <label for="terms" class="col-md-4 col-form-label text-md-right">I agree to terms and conditions</label>
+                                <label for="terms" class="col-md-4 col-form-label text-md-right">I agree to <a href="{{url('terms')}}" target="_blank">terms and conditions</a></label>
     
                                 <div class="col-md-6">
-                                    <input id="terms" type="checkbox" class="form-control" name="terms" required>
+
+                                    <select name="terms" class="form-control {{ $errors->has('terms') ? ' is-invalid' : '' }}" required>
+                                        <option></option>
+                                        <option value="0">Disagree</option>
+                                        <option value="1">Agree</option>
+                                    </select>  
+                                    @if ($errors->has('terms'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('terms') }}</strong>
+                                    </span>
+                                @endif                                  
                                 </div>
                             </div>
-
-
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

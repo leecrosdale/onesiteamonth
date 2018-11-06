@@ -48193,7 +48193,7 @@ var render = function() {
               attrs: { deadline: _vm.time_remaining }
             }),
             _vm._v(" "),
-            _c("VueTwitchPlayer")
+            _c("VueTwitchPlayer", { attrs: { channel: _vm.channel } })
           ],
           1
         )
@@ -48274,6 +48274,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -48306,12 +48321,41 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col-md-12" },
-    _vm._l(_vm.projects, function(project) {
-      return _c("div", { staticClass: "col-md-3" }, [
-        _vm._v("\n            " + _vm._s(project.title) + "\n    ")
-      ])
-    })
+    { staticClass: "col-md-12 justify-content-center text-center" },
+    [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.projects, function(project) {
+          return _c("div", { staticClass: "col-md-3 ml-2 border" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("span", [_vm._v(_vm._s(project.title))])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("img", {
+                  staticStyle: { height: "100px", width: "200px" },
+                  attrs: { src: project.image }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c(
+                  "a",
+                  { attrs: { href: project.repository_url, target: "_blank" } },
+                  [_vm._v("View Repository")]
+                )
+              ])
+            ])
+          ])
+        })
+      )
+    ]
   )
 }
 var staticRenderFns = []

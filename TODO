@@ -7,10 +7,15 @@ Todo:
   ✔ Create UserProfile Model - id, name, value, type (Create UserProfileTypeEnums) // Text, Number, Image, Link @done(18-10-28 18:35)
   ✔ Add implement MustVerifyEmail in User Model @done(18-10-28 18:39)
   ☐ Add reference to unsplash
-  ☐ Create homepage and signup @started(18-11-04 09:40)
+  ✔ Create homepage and signup @started(18-11-04 09:40) @done(18-11-06 18:22) @lasted(2d8h42m10s)
   ☐ Add challenges (months)
-  ☐ Discussion board? Slack / Discord
-
+  ✔ Discussion board? Slack / Discord @done(18-11-06 18:51)
+  ✔ Fix Registration @started(18-11-06 18:53) @done(18-11-06 19:08) @lasted(15m20s)
+  ✔ Add Projects to homepage @started(18-11-06 18:22) @done(18-11-06 18:51) @lasted(29m7s)
+  ✔ Add border AND spacing between projects on homepage @started(18-11-06 18:51) @done(18-11-06 18:53) @lasted(2m31s) - Thanks steve!
+  ✔ Add newsletter column to users @started(18-11-06 19:09) @done(18-11-06 19:13) @lasted(4m29s)
+  ☐ Add way for user to manage newsletter
+  ✔ Change welcome page if logged in @started(18-11-06 19:14) @done(18-11-06 19:15) @lasted(1m48s)
 
 
 

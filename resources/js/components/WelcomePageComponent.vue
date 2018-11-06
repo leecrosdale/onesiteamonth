@@ -7,8 +7,8 @@
             <div class="card-body">  
                 <div class="row justify-content-center text-center">                    
                     <div class="col-md-12">                   
-                        Time Remaining: <CrosdaleCountdownComponentVue :deadline="time_remaining"></CrosdaleCountdownComponentVue>                
-                        <VueTwitchPlayer></VueTwitchPlayer>
+                        Time Remaining: <CrosdaleCountdownComponentVue :deadline="time_remaining" />
+                        <VueTwitchPlayer :channel="channel" />
                     </div>
                 </div>
             </div>
