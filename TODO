@@ -16,6 +16,17 @@ Todo:
   ✔ Add newsletter column to users @started(18-11-06 19:09) @done(18-11-06 19:13) @lasted(4m29s)
   ☐ Add way for user to manage newsletter
   ✔ Change welcome page if logged in @started(18-11-06 19:14) @done(18-11-06 19:15) @lasted(1m48s)
+  ☐ Add project status to welcome page
+  ☐ CRUD for Projects 
+  ☐ CRUD for Themes
+  ☐ Admin Panel
+  ☐ Theme Voting / Slaying
+  ☐ Twitch voting? (probably not)
+  ☐ Add link for slack/discord and larahack
+  ☐ Add confirmation message on CRUD (update saved)
+  ☐ Project Frontend
+  ☐ Theme Frontend
+
 
 
 

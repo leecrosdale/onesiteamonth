@@ -5,10 +5,9 @@
     <div class="row justify-content-center">
         @guest
         <div class="col-md-6 py-1">
-        @endguest
-        @auth
+        @else        
         <div class="col-md-12 py-1">    
-        @endauth
+        @endguest
             <welcome-page-component></welcome-page-component>            
         </div>
         @guest
