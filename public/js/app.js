@@ -14014,7 +14014,10 @@ window.Vue = __webpack_require__(37);
 
 Vue.component('example-component', __webpack_require__(40));
 Vue.component('welcome-page-component', __webpack_require__(43));
+
+// Projects
 Vue.component('projects-list-component', __webpack_require__(56));
+Vue.component('projects-create-component', __webpack_require__(63));
 
 var app = new Vue({
   el: '#app'
@@ -48289,6 +48292,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -48296,7 +48312,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            projects: {}
+            projects: {},
+            statusBadges: ['badge badge-danger', 'badge badge-primary', 'badge badge-success'],
+            statusTexts: ['Not Active', 'In Progress', 'Finished']
         };
     },
 
@@ -48327,7 +48345,7 @@ var render = function() {
         "div",
         { staticClass: "row" },
         _vm._l(_vm.projects, function(project) {
-          return _c("div", { staticClass: "col-md-3 ml-2 border" }, [
+          return _c("div", { staticClass: "col-md-3 ml-1 border" }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-12" }, [
                 _c("span", [_vm._v(_vm._s(project.title))])
@@ -48337,7 +48355,7 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-12" }, [
                 _c("img", {
-                  staticStyle: { height: "100px", width: "200px" },
+                  staticStyle: { height: "50px", width: "100px" },
                   attrs: { src: project.image }
                 })
               ])
@@ -48350,6 +48368,24 @@ var render = function() {
                   { attrs: { href: project.repository_url, target: "_blank" } },
                   [_vm._v("View Repository")]
                 )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _vm._v(
+                  "\n               " +
+                    _vm._s(project.theme.theme_idea.title) +
+                    "\n            "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("span", { class: _vm.statusBadges[project.status] }, [
+                  _vm._v(_vm._s(_vm.statusTexts[project.status]))
+                ])
               ])
             ])
           ])
@@ -48373,6 +48409,98 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(64)
+/* template */
+var __vue_template__ = __webpack_require__(65)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ProjectsCreateComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e1dbb128", Component.options)
+  } else {
+    hotAPI.reload("data-v-e1dbb128", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {},
+    data: function data() {
+        return {
+            title: ''
+        };
+    },
+
+    methods: {}
+});
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e1dbb128", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

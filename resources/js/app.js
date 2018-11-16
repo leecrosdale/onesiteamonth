@@ -18,7 +18,10 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('welcome-page-component', require('./components/WelcomePageComponent.vue'));
+
+// Projects
 Vue.component('projects-list-component', require('./components/ProjectsListComponent.vue'));
+Vue.component('projects-create-component', require('./components/ProjectsCreateComponent.vue'));
 
 
 

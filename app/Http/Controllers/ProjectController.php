@@ -6,6 +6,7 @@ use App\Project;
 use Illuminate\Http\Request;
 use App\Repository\ThemeRepository;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
@@ -18,9 +19,7 @@ class ProjectController extends Controller
     {
         $theme = ThemeRepository::getCurrentTheme();
         $projects = Project::where('theme_id', $theme->id)->get();
-        
-        return view('projects.index', ['projects' => $projects]);
-
+        return view('projects.index', ['projects' => $projects, 'theme' => $theme]);
     }
 
     /**
@@ -44,15 +43,17 @@ class ProjectController extends Controller
         
             $theme = ThemeRepository::getCurrentTheme();
             
-            $this->validate($request);           
+            $this->validate($request);         
+                       
 
             Project::create([
                 'title' => $request->title,
                 'description' => $request->description,
-                'repository_url' => $request->repository_url,
+                'repository_url' => $request->repository,
                 'image' => $request->image,
                 'user_id' => Auth::user()->id,
-                'theme_id' => $theme->id
+                'theme_id' => $theme->id,
+                'status' => $request->status,
             ]);
             
 
@@ -60,12 +61,13 @@ class ProjectController extends Controller
 
     }
 
-    public function validate(Request $request) {
+    public function validate(Request $request,array $rules = [], array $messages = [], array $customAttributes = []) {
         return Validator::make($request->all(), [
             'title' => 'required|max:255',
             'description' => 'required',
-            'repository_url' => ['required','active_url'],
-            'image' => ['required', 'active_url']                
+            'repository' => ['required'],
+            'image' => ['required'],
+            'status' => 'numeric'
         ])->validate();
     }
 
@@ -104,7 +106,7 @@ class ProjectController extends Controller
 
         $project->title = $request->title;
         $project->description = $request->description;
-        $project->repository_url = $request->repository_url;
+        $project->repository = $request->repository;
         $project->image = $request->image;
         $project->save();
 
