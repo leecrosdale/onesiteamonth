@@ -28,6 +28,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
 
-    //TODO add stuff
+    public function projects() {
+        return $this->hasMany('App\Project');
+    }
+
     
 }

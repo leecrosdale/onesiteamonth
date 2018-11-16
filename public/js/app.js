@@ -13988,7 +13988,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(62);
 
 
 /***/ }),
@@ -14017,7 +14017,7 @@ Vue.component('welcome-page-component', __webpack_require__(43));
 
 // Projects
 Vue.component('projects-list-component', __webpack_require__(56));
-Vue.component('projects-create-component', __webpack_require__(63));
+Vue.component('projects-create-component', __webpack_require__(59));
 
 var app = new Vue({
   el: '#app'
@@ -48308,8 +48308,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        this.getProjects();
+
+        if (this.user_id) {
+            this.getUserProjects();
+        } else {
+            this.getProjects();
+        }
     },
+
+    props: ['user_id'],
     data: function data() {
         return {
             projects: {},
@@ -48324,6 +48331,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.get('/api/project/all').then(function (response) {
                 return _this.projects = response.data;
+            });
+        },
+        getUserProjects: function getUserProjects() {
+            var _this2 = this;
+
+            axios.get('/api/user/' + this.user_id + '/projects').then(function (response) {
+                return _this2.projects = response.data;
             });
         }
     }
@@ -48363,11 +48377,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-12" }, [
-                _c(
-                  "a",
-                  { attrs: { href: project.repository_url, target: "_blank" } },
-                  [_vm._v("View Repository")]
-                )
+                _c("a", { attrs: { href: "/projects/" + project.id } }, [
+                  _vm._v("View Project")
+                ])
               ])
             ]),
             _vm._v(" "),
@@ -48406,23 +48418,14 @@ if (false) {
 
 /***/ }),
 /* 59 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(64)
+var __vue_script__ = __webpack_require__(60)
 /* template */
-var __vue_template__ = __webpack_require__(65)
+var __vue_template__ = __webpack_require__(61)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48461,7 +48464,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 64 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48483,7 +48486,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 65 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48501,6 +48504,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-e1dbb128", module.exports)
   }
 }
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

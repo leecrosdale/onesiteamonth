@@ -29,7 +29,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        $theme = ThemeRepository::getCurrentTheme();
+        return view('projects.create', ['theme' => $theme]);
     }
 
     /**
@@ -78,8 +79,8 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Project $project)
-    {
-        return view('projects.view', $project);
+    {                
+        return view('projects.view',$project->with('theme.theme_idea')->with('user')->first() );
     }
 
     /**

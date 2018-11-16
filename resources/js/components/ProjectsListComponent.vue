@@ -15,7 +15,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <a v-bind:href="project.repository_url" target="_blank">View Repository</a>
+                    <a v-bind:href="'/projects/' + project.id">View Project</a>
                 </div>                        
             </div> 
 
@@ -39,8 +39,17 @@
 <script>
     export default {   
         mounted() {
-            this.getProjects();    
-        },        
+
+            if (this.user_id) {
+                this.getUserProjects();
+            } else {
+                this.getProjects();    
+            }
+
+        },    
+        props: [
+            'user_id'
+        ], 
         data() { 
             return {
                 projects: {},
@@ -51,7 +60,10 @@
         methods: {
             getProjects: function() {
                 axios.get('/api/project/all').then(response =>(this.projects = response.data)) 
-            }     
+            },
+            getUserProjects: function() {
+                axios.get('/api/user/' + this.user_id + '/projects').then(response => (this.projects = response.data));          
+            }
         }   
     }
 </script>

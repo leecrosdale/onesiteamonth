@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('theme/current', 'Api\ThemeController@current');
 
 Route::get('project/all', 'Api\ProjectController@all');
+Route::get('user/{user}/projects', 'Api\ProjectController@projectsByUserId');
